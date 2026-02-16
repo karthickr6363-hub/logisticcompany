@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogiFast - About Us</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚛</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f172a',
+                        secondary: '#334155',
+                        accent: '#2563eb',
+                        'accent-hover': '#1d4ed8',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-2 group">
+                        <div
+                            class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center text-white text-xl shadow-lg group-hover:scale-105 transition-transform">
+                            <i class="fas fa-truck-fast"></i>
+                        </div>
+                        <span class="font-bold text-2xl tracking-tight text-primary dark:text-white">LogiFast</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden xl:flex items-center space-x-8">
+                    <!-- Home Dropdown -->
+                    <div class="relative group">
+                        <a href="index.html"
+                            class="nav-link font-medium hover:text-accent transition-colors flex items-center gap-1">
+                            Home <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div class="absolute top-full left-0 mt-0 pt-4 hidden group-hover:block w-48 animate-fadeIn">
+                            <div
+                                class="bg-white dark:bg-gray-800 shadow-xl rounded-xl py-2 border border-gray-100 dark:border-gray-700 overflow-hidden">
+                                <a href="index.html"
+                                    class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-accent transition-colors">Home
+                                    V1</a>
+                                <a href="home2.html"
+                                    class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-accent transition-colors">Home
+                                    V2</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Services Dropdown -->
+                    <div class="relative group">
+                        <a href="services.html"
+                            class="nav-link font-medium hover:text-accent transition-colors flex items-center gap-1">
+                            Services <i
+                                class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div class="absolute top-full left-0 mt-0 pt-4 hidden group-hover:block w-56 animate-fadeIn">
+                            <div
+                                class="bg-white dark:bg-gray-800 shadow-xl rounded-xl py-2 border border-gray-100 dark:border-gray-700 overflow-hidden">
+                                <a href="services.html"
+                                    class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-accent transition-colors">Air
+                                    Freight</a>
+                                <a href="services.html"
+                                    class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-accent transition-colors">Sea
+                                    Freight</a>
+                                <a href="services.html"
+                                    class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-accent transition-colors">Road
+                                    Transport</a>
+                                <a href="services.html"
+                                    class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-accent transition-colors">Warehousing</a>
+                                <a href="services.html"
+                                    class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-accent transition-colors">Customs
+                                    Clearance</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="industries.html"
+                        class="nav-link font-medium hover:text-accent transition-colors">Industries</a>
+                    <a href="tracking.html"
+                        class="nav-link font-medium hover:text-accent transition-colors">Tracking</a>
+                    <a href="about.html" class="nav-link font-medium hover:text-accent transition-colors">About</a>
+                    <a href="contact.html" class="nav-link font-medium hover:text-accent transition-colors">Contact</a>
+                    <a href="admin_dashboard.html"
+                        class="nav-link font-medium hover:text-accent transition-colors text-red-500 hover:text-red-600">Admin</a>
+                </div>
+
+                <!-- Right Actions -->
+                <div class="hidden xl:flex items-center gap-4">
+                    <button
+                        class="theme-toggle w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    <a href="contact.html"
+                        class="bg-accent hover:bg-accent-hover text-white px-6 py-2.5 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                        Get Quote
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="xl:hidden flex items-center gap-4">
+                    <button
+                        class="theme-toggle w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    <button id="mobile-menu-btn"
+                        class="text-gray-700 dark:text-gray-200 hover:text-accent focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- Mobile Menu (Left Slide-in) -->
+    <div id="mobile-menu"
+        class="fixed inset-y-0 left-0 w-64 bg-white dark:bg-gray-900 shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out xl:hidden z-[60] flex flex-col pt-20 px-6">
+        <a href="index.html"
+            class="py-3 text-lg font-medium border-b border-gray-100 dark:border-gray-800 hover:text-accent">Home
+            V1</a>
+        <a href="home2.html"
+            class="py-3 text-lg font-medium border-b border-gray-100 dark:border-gray-800 hover:text-accent">Home
+            V2</a>
+        <a href="services.html"
+            class="py-3 text-lg font-medium border-b border-gray-100 dark:border-gray-800 hover:text-accent">Services</a>
+        <a href="tracking.html"
+            class="py-3 text-lg font-medium border-b border-gray-100 dark:border-gray-800 hover:text-accent">Tracking</a>
+        <a href="about.html"
+            class="py-3 text-lg font-medium border-b border-gray-100 dark:border-gray-800 hover:text-accent">About</a>
+        <a href="contact.html"
+            class="py-3 text-lg font-medium border-b border-gray-100 dark:border-gray-800 hover:text-accent">Contact</a>
+        <a href="admin_dashboard.html"
+            class="py-3 text-lg font-medium border-b border-gray-100 dark:border-gray-800 text-red-500 hover:text-red-700">Admin
+            Panel</a>
+        <a href="contact.html"
+            class="mt-6 w-full bg-accent text-white text-center py-3 rounded-lg font-bold shadow-md">Get Quote</a>
+    </div>
+
+    <!-- Page Header -->
+    <div class="bg-primary pt-32 pb-16 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">About LogiFast</h1>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto">Connecting businesses to the world through efficient
+                supply chain management.</p>
+        </div>
+    </div>
+
+    <!-- Mission & Vision -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1932&q=80"
+                        alt="Meeting" class="rounded-2xl shadow-2xl">
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary dark:text-white mb-6">Our Mission</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+                        To simplify global trade and empower businesses by providing reliable, transparent, and
+                        sustainable logistics solutions. We strive to be the backbone of your supply chain success.
+                    </p>
+                    <h3 class="text-2xl font-bold text-primary dark:text-white mb-4">Core Values</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center mt-1">
+                                <i class="fas fa-gem text-xs"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-primary dark:text-white">Excellence</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">We commit to the highest standards
+                                    in every shipment.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center mt-1">
+                                <i class="fas fa-handshake text-xs"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-primary dark:text-white">Integrity</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">Honesty and transparency are at the
+                                    heart of our operations.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center mt-1">
+                                <i class="fas fa-leaf text-xs"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-primary dark:text-white">Sustainability</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">Committed to reducing our carbon
+                                    footprint through eco-friendly practices.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company History (Timeline) -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary dark:text-white mb-4">Our Journey</h2>
+                <p class="text-gray-600 dark:text-gray-400">Milestones that defined us.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto relative border-l-2 border-accent/30 space-y-12 pl-8 md:pl-0">
+                <!-- Milestone 1 -->
+                <div class="relative md:flex items-center">
+                    <div class="hidden md:block w-1/2 pr-8 text-right">
+                        <h3 class="text-xl font-bold text-accent">2010</h3>
+                        <p class="text-gray-600 dark:text-gray-400">LogiFast founded in London with a single truck.</p>
+                    </div>
+                    <div
+                        class="absolute left-[-11px] md:left-1/2 md:-ml-[11px] w-6 h-6 bg-accent rounded-full border-4 border-white dark:border-gray-800">
+                    </div>
+                    <div class="md:w-1/2 md:pl-8">
+                        <span class="md:hidden font-bold text-accent block mb-1">2010</span>
+                        <h4 class="text-lg font-bold text-primary dark:text-white">Company Inception</h4>
+                        <p class="text-gray-600 dark:text-gray-400 md:hidden">LogiFast founded in London with a single
+                            truck.</p>
+                    </div>
+                </div>
+
+                <!-- Milestone 2 -->
+                <div class="relative md:flex items-center">
+                    <div class="hidden md:block w-1/2 pr-8 text-right">
+                        <h4 class="text-lg font-bold text-primary dark:text-white">European Expansion</h4>
+                        <p class="text-gray-600 dark:text-gray-400 md:hidden">Opened hubs in Germany and France.</p>
+                    </div>
+                    <div
+                        class="absolute left-[-11px] md:left-1/2 md:-ml-[11px] w-6 h-6 bg-accent rounded-full border-4 border-white dark:border-gray-800">
+                    </div>
+                    <div class="md:w-1/2 md:pl-8">
+                        <span class="md:hidden font-bold text-accent block mb-1">2015</span>
+                        <h3 class="text-xl font-bold text-accent md:hidden">2015</h3> <!-- Mobile Year -->
+                        <h3 class="text-xl font-bold text-accent hidden md:block"
+                            style="position: absolute; left:-4rem;">2015</h3>
+                        <!-- Fix for year on right side in desktop? No, logic is split -->
+                        <!-- Doing simple alt layout -->
+                        <div class="md:hidden">
+                            <h4 class="text-lg font-bold text-primary dark:text-white">European Expansion</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Opened hubs in Germany and France.</p>
+                        </div>
+                        <div class="hidden md:block">
+                            <h3 class="text-xl font-bold text-accent">2015</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Opened hubs in Germany and France.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Correcting Timeline logic for visual balance -->
+                <!-- Milestone 2 Corrected for Alternating -->
+                <div class="relative md:flex items-center flex-row-reverse">
+                    <div class="hidden md:block w-1/2 pl-8 text-left">
+                        <h3 class="text-xl font-bold text-accent">2015</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Expanded operations to mainland Europe.</p>
+                    </div>
+                    <div
+                        class="absolute left-[-11px] md:left-1/2 md:-ml-[11px] w-6 h-6 bg-accent rounded-full border-4 border-white dark:border-gray-800">
+                    </div>
+                    <div class="md:w-1/2 md:pr-8 text-left md:text-right">
+                        <span class="md:hidden font-bold text-accent block mb-1">2015</span>
+                        <h4 class="text-lg font-bold text-primary dark:text-white">European Expansion</h4>
+                        <p class="text-gray-600 dark:text-gray-400 md:hidden">Expanded operations to mainland Europe.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Milestone 3 -->
+                <div class="relative md:flex items-center">
+                    <div class="hidden md:block w-1/2 pr-8 text-right">
+                        <h3 class="text-xl font-bold text-accent">2020</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Launched Digital Tracking Platform.</p>
+                    </div>
+                    <div
+                        class="absolute left-[-11px] md:left-1/2 md:-ml-[11px] w-6 h-6 bg-accent rounded-full border-4 border-white dark:border-gray-800">
+                    </div>
+                    <div class="md:w-1/2 md:pl-8">
+                        <span class="md:hidden font-bold text-accent block mb-1">2020</span>
+                        <h4 class="text-lg font-bold text-primary dark:text-white">Digital Transformation</h4>
+                        <p class="text-gray-600 dark:text-gray-400 md:hidden">Launched Digital Tracking Platform.</p>
+                    </div>
+                </div>
+
+                <!-- Milestone 4 -->
+                <div class="relative md:flex items-center flex-row-reverse">
+                    <div class="hidden md:block w-1/2 pl-8 text-left">
+                        <h3 class="text-xl font-bold text-accent">2025</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Achieved Carbon Neutrality in main hubs.</p>
+                    </div>
+                    <div
+                        class="absolute left-[-11px] md:left-1/2 md:-ml-[11px] w-6 h-6 bg-accent rounded-full border-4 border-white dark:border-gray-800">
+                    </div>
+                    <div class="md:w-1/2 md:pr-8 text-left md:text-right">
+                        <span class="md:hidden font-bold text-accent block mb-1">2025</span>
+                        <h4 class="text-lg font-bold text-primary dark:text-white">Green Milestone</h4>
+                        <p class="text-gray-600 dark:text-gray-400 md:hidden">Achieved Carbon Neutrality in main hubs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary dark:text-white mb-16">Meet Our Leadership</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Member 1 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img src="https://ui-avatars.com/api/?name=John+D&background=0f172a&color=fff&size=200"
+                            alt="CEO"
+                            class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-4">
+                            <a href="#" class="text-white hover:text-accent"><i class="fab fa-linkedin text-xl"></i></a>
+                            <a href="#" class="text-white hover:text-accent"><i class="fab fa-twitter text-xl"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary dark:text-white">John Davidson</h3>
+                    <p class="text-gray-500 text-sm">Founder & CEO</p>
+                </div>
+                <!-- Member 2 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Sarah+M&background=0f172a&color=fff&size=200"
+                            alt="COO"
+                            class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-4">
+                            <a href="#" class="text-white hover:text-accent"><i class="fab fa-linkedin text-xl"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary dark:text-white">Sarah Miller</h3>
+                    <p class="text-gray-500 text-sm">Chief Operations Officer</p>
+                </div>
+                <!-- Member 3 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img src="https://ui-avatars.com/api/?name=David+C&background=0f172a&color=fff&size=200"
+                            alt="CTO"
+                            class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-4">
+                            <a href="#" class="text-white hover:text-accent"><i class="fab fa-linkedin text-xl"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary dark:text-white">David Chen</h3>
+                    <p class="text-gray-500 text-sm">Chief Technology Officer</p>
+                </div>
+                <!-- Member 4 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Emily+R&background=0f172a&color=fff&size=200"
+                            alt="CFO"
+                            class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-4">
+                            <a href="#" class="text-white hover:text-accent"><i class="fab fa-linkedin text-xl"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary dark:text-white">Emily Roberts</h3>
+                    <p class="text-gray-500 text-sm">Chief Financial Officer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-gray-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center text-white text-xl">
+                            <i class="fas fa-truck-fast"></i>
+                        </div>
+                        <span class="font-bold text-2xl text-white">LogiFast</span>
+                    </a>
+                    <p class="text-gray-400 mb-6">Delivering excellence across every mile.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-accent hover:text-white transition-all transform hover:-translate-y-1">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-accent hover:text-white transition-all transform hover:-translate-y-1">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="services.html" class="hover:text-accent transition-colors">All Services</a></li>
+                        <li><a href="tracking.html" class="hover:text-accent transition-colors">Track Shipment</a></li>
+                        <li><a href="about.html" class="text-accent transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-accent transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="services.html" class="hover:text-accent transition-colors">Air Freight</a></li>
+                        <li><a href="services.html" class="hover:text-accent transition-colors">Ocean Freight</a></li>
+                        <li><a href="services.html" class="hover:text-accent transition-colors">Road Transport</a></li>
+                    </ul>
+                </div>
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Newsletter</h4>
+                    <form class="flex flex-col gap-3">
+                        <input type="email" placeholder="Your Email"
+                            class="bg-gray-800 border border-gray-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-accent">
+                        <button type="submit"
+                            class="bg-accent hover:bg-accent-hover text-white px-6 py-3 rounded-lg font-bold transition-colors">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div
+                class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+                <div>&copy; 2026 LogiFast Inc. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

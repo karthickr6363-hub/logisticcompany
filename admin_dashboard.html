@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogiFast - Admin Dashboard</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚛</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: { colors: { primary: '#0f172a', secondary: '#334155', accent: '#2563eb', 'accent-hover': '#1d4ed8' }, fontFamily: { sans: ['Inter', 'sans-serif'] } }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom scrollbar for sidebar */
+        .sidebar-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .sidebar-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .sidebar-scroll::-webkit-scrollbar-thumb {
+            background-color: rgba(156, 163, 175, 0.5);
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans h-screen overflow-hidden flex">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-primary text-white hidden xl:flex flex-col h-full shadow-xl z-20">
+        <!-- Brand -->
+        <div class="h-20 flex items-center px-6 border-b border-gray-700">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-accent rounded-md flex items-center justify-center text-white text-lg">
+                    <i class="fas fa-truck-fast"></i>
+                </div>
+                <span class="font-bold text-xl tracking-tight">LogiFast Admin</span>
+            </a>
+        </div>
+
+        <!-- Menu -->
+        <div class="flex-1 overflow-y-auto sidebar-scroll py-6 px-4 space-y-2">
+            <div class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 px-2">Main</div>
+            <a href="#" class="flex items-center gap-3 px-3 py-2.5 bg-accent rounded-lg text-white shadow-md">
+                <i class="fas fa-home w-5 text-center"></i>
+                <span class="font-medium">Overview</span>
+            </a>
+            <a href="#"
+                class="flex items-center gap-3 px-3 py-2.5 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition-colors">
+                <i class="fas fa-boxes w-5 text-center"></i>
+                <span class="font-medium">Shipments</span>
+                <span class="ml-auto bg-red-500 text-xs px-2 py-0.5 rounded-full">3</span>
+            </a>
+            <a href="#"
+                class="flex items-center gap-3 px-3 py-2.5 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition-colors">
+                <i class="fas fa-users w-5 text-center"></i>
+                <span class="font-medium">Users</span>
+            </a>
+            <a href="#"
+                class="flex items-center gap-3 px-3 py-2.5 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition-colors">
+                <i class="fas fa-id-card w-5 text-center"></i>
+                <span class="font-medium">Drivers</span>
+            </a>
+
+            <div class="text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2 px-2">Finance</div>
+            <a href="#"
+                class="flex items-center gap-3 px-3 py-2.5 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition-colors">
+                <i class="fas fa-file-invoice-dollar w-5 text-center"></i>
+                <span class="font-medium">Invoices</span>
+            </a>
+            <a href="#"
+                class="flex items-center gap-3 px-3 py-2.5 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition-colors">
+                <i class="fas fa-chart-line w-5 text-center"></i>
+                <span class="font-medium">Reports</span>
+            </a>
+
+            <div class="text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2 px-2">System</div>
+            <a href="#"
+                class="flex items-center gap-3 px-3 py-2.5 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition-colors">
+                <i class="fas fa-cog w-5 text-center"></i>
+                <span class="font-medium">Settings</span>
+            </a>
+        </div>
+
+        <!-- Logout Section -->
+        <div class="p-4 border-t border-gray-700">
+            <a href="index.html"
+                class="flex items-center px-4 py-3 text-red-400 hover:bg-red-500/10 hover:text-red-300 rounded-lg transition-colors">
+                <i class="fas fa-sign-out-alt w-6"></i>
+                <span class="font-medium">Logout</span>
+            </a>
+        </div>
+
+        <!-- User Profile -->
+        <div class="h-20 border-t border-gray-700 flex items-center px-6">
+            <div class="flex items-center gap-3">
+                <img src="https://ui-avatars.com/api/?name=Admin+User&background=2563eb&color=fff" alt="Admin"
+                    class="w-10 h-10 rounded-full border-2 border-accent">
+                <div>
+                    <div class="text-sm font-bold text-white">Admin User</div>
+                    <div class="text-xs text-gray-400">Super Admin</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col h-full overflow-hidden relative">
+        <!-- Header -->
+        <header class="h-20 bg-white dark:bg-gray-800 shadow-sm flex items-center justify-between px-6 z-10">
+            <div class="flex items-center gap-4">
+                <button id="mobile-menu-btn"
+                    class="xl:hidden text-gray-600 dark:text-gray-300 hover:text-primary focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                <h2 class="text-xl font-bold text-primary dark:text-white">Dashboard Overview</h2>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <!-- Search -->
+                <div class="hidden xl:block relative">
+                    <input type="text" placeholder="Search..."
+                        class="bg-gray-100 dark:bg-gray-700 border-none rounded-full px-4 py-2 text-sm focus:ring-2 focus:ring-accent w-64 text-gray-700 dark:text-gray-200">
+                    <i class="fas fa-search absolute right-3 top-2.5 text-gray-400 text-sm"></i>
+                </div>
+                <!-- Notifications -->
+                <button
+                    class="relative w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                    <i class="far fa-bell"></i>
+                    <span class="absolute top-2 right-2.5 w-2 h-2 bg-red-500 rounded-full"></span>
+                </button>
+                <!-- Theme Toggle -->
+                <button
+                    class="theme-toggle w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:block"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Content Scrollable Area -->
+        <div class="flex-1 overflow-y-auto p-6 lg:p-10">
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <!-- Stat Card 1 -->
+                <div
+                    class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex items-center gap-4">
+                    <div
+                        class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-accent text-2xl">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div>
+                        <div class="text-gray-500 dark:text-gray-400 text-sm font-medium">Total Revenue</div>
+                        <div class="text-2xl font-bold text-primary dark:text-white">$124,500</div>
+                        <div class="text-green-500 text-xs font-semibold flex items-center gap-1"><i
+                                class="fas fa-arrow-up"></i> +12% vs last month</div>
+                    </div>
+                </div>
+                <!-- Stat Card 2 -->
+                <div
+                    class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex items-center gap-4">
+                    <div
+                        class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center text-green-600 text-2xl">
+                        <i class="fas fa-truck-moving"></i>
+                    </div>
+                    <div>
+                        <div class="text-gray-500 dark:text-gray-400 text-sm font-medium">Active Shipments</div>
+                        <div class="text-2xl font-bold text-primary dark:text-white">45</div>
+                        <div class="text-green-500 text-xs font-semibold flex items-center gap-1"><i
+                                class="fas fa-arrow-up"></i> +5 new today</div>
+                    </div>
+                </div>
+                <!-- Stat Card 3 -->
+                <div
+                    class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex items-center gap-4">
+                    <div
+                        class="w-12 h-12 bg-yellow-100 dark:bg-yellow-900/30 rounded-xl flex items-center justify-center text-yellow-600 text-2xl">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div>
+                        <div class="text-gray-500 dark:text-gray-400 text-sm font-medium">New Users</div>
+                        <div class="text-2xl font-bold text-primary dark:text-white">128</div>
+                        <div class="text-gray-400 text-xs">This week</div>
+                    </div>
+                </div>
+                <!-- Stat Card 4 -->
+                <div
+                    class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex items-center gap-4">
+                    <div
+                        class="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-xl flex items-center justify-center text-red-600 text-2xl">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div>
+                        <div class="text-gray-500 dark:text-gray-400 text-sm font-medium">Pending Issues</div>
+                        <div class="text-2xl font-bold text-primary dark:text-white">3</div>
+                        <div class="text-red-500 text-xs font-semibold">Action required</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Shipments Table -->
+            <div
+                class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden mb-8">
+                <div class="px-6 py-5 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center">
+                    <h3 class="text-lg font-bold text-primary dark:text-white">Recent Shipments</h3>
+                    <a href="#" class="text-sm text-accent font-semibold hover:underline">View All</a>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr
+                                class="bg-gray-50 dark:bg-gray-700/50 text-xs uppercase text-gray-500 dark:text-gray-400 font-semibold">
+                                <th class="px-6 py-4">Tracking ID</th>
+                                <th class="px-6 py-4">Customer</th>
+                                <th class="px-6 py-4">Origin</th>
+                                <th class="px-6 py-4">Destination</th>
+                                <th class="px-6 py-4">Status</th>
+                                <th class="px-6 py-4">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
+                            <!-- Row 1 -->
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
+                                <td class="px-6 py-4 font-medium text-primary dark:text-white">LGF-889231</td>
+                                <td class="px-6 py-4 text-gray-600 dark:text-gray-300">
+                                    <div class="flex items-center gap-3">
+                                        <img src="https://ui-avatars.com/api/?name=Alice+Wonder&background=random"
+                                            class="w-8 h-8 rounded-full">
+                                        <span>Alice Wonder</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-gray-600 dark:text-gray-400">New York, USA</td>
+                                <td class="px-6 py-4 text-gray-600 dark:text-gray-400">London, UK</td>
+                                <td class="px-6 py-4"><span
+                                        class="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 px-3 py-1 rounded-full text-xs font-semibold">In
+                                        Transit</span></td>
+                                <td class="px-6 py-4">
+                                    <button class="text-gray-400 hover:text-accent transition-colors"><i
+                                            class="fas fa-ellipsis-v"></i></button>
+                                </td>
+                            </tr>
+                            <!-- Row 2 -->
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
+                                <td class="px-6 py-4 font-medium text-primary dark:text-white">LGF-774120</td>
+                                <td class="px-6 py-4 text-gray-600 dark:text-gray-300">
+                                    <div class="flex items-center gap-3">
+                                        <img src="https://ui-avatars.com/api/?name=Bob+Smith&background=random"
+                                            class="w-8 h-8 rounded-full">
+                                        <span>Bob Smith</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Berlin, DE</td>
+                                <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Paris, FR</td>
+                                <td class="px-6 py-4"><span
+                                        class="bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400 px-3 py-1 rounded-full text-xs font-semibold">Pending</span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <button class="text-gray-400 hover:text-accent transition-colors"><i
+                                            class="fas fa-ellipsis-v"></i></button>
+                                </td>
+                            </tr>
+                            <!-- Row 3 -->
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
+                                <td class="px-6 py-4 font-medium text-primary dark:text-white">LGF-552190</td>
+                                <td class="px-6 py-4 text-gray-600 dark:text-gray-300">
+                                    <div class="flex items-center gap-3">
+                                        <img src="https://ui-avatars.com/api/?name=Charlie+Davis&background=random"
+                                            class="w-8 h-8 rounded-full">
+                                        <span>Charlie Davis</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Tokyo, JP</td>
+                                <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Sydney, AU</td>
+                                <td class="px-6 py-4"><span
+                                        class="bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 px-3 py-1 rounded-full text-xs font-semibold">Processing</span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <button class="text-gray-400 hover:text-accent transition-colors"><i
+                                            class="fas fa-ellipsis-v"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Simple Sidebar Toggle Logic specific to Admin Dashboard if needed
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const sidebar = document.querySelector('aside');
+                sidebar.classList.toggle('hidden');
+                sidebar.classList.toggle('flex');
+                sidebar.classList.toggle('fixed');
+                sidebar.classList.toggle('inset-y-0');
+                sidebar.classList.toggle('left-0');
+                sidebar.classList.toggle('z-50');
+            });
+        }
+    </script>
+</body>
+
+</html>

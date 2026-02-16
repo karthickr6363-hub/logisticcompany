@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogiFast - Sign Up</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚛</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f172a',
+                        secondary: '#334155',
+                        accent: '#2563eb',
+                        'accent-hover': '#1d4ed8',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body,
+        html {
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 flex items-center justify-center p-4">
+    <div
+        class="w-full max-w-md bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden animate-fadeIn border border-gray-200 dark:border-gray-700">
+        <div class="p-8">
+            <div class="text-center mb-8">
+                <a href="index.html" class="inline-flex items-center gap-2 group">
+                    <div
+                        class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center text-white text-2xl shadow-lg group-hover:scale-105 transition-transform">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                </a>
+                <h2 class="mt-4 text-3xl font-bold text-primary dark:text-white">Join LogiFast</h2>
+                <p class="text-gray-500 dark:text-gray-400">Create an account to track your shipments.</p>
+            </div>
+            <form class="space-y-4" action="dashboard.html">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Full
+                        Name</label>
+                    <input type="text" id="name"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-accent focus:border-accent dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email
+                        Address</label>
+                    <input type="email" id="email"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-accent focus:border-accent dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                </div>
+                <div>
+                    <label for="password"
+                        class="block text-sm font-medium text-gray-700 dark:text-gray-300">Password</label>
+                    <input type="password" id="password"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-accent focus:border-accent dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                </div>
+                <div>
+                    <button type="submit"
+                        class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-accent hover:bg-accent-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition-colors">
+                        Sign Up
+                    </button>
+                </div>
+            </form>
+            <p class="mt-8 text-center text-sm text-gray-600 dark:text-gray-400">
+                Already have an account? <a href="login.html"
+                    class="font-medium text-accent hover:text-accent-hover">Sign in</a>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

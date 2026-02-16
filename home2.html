@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogiFast - Global Logistics Solutions (V2)</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚛</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: { colors: { primary: '#0f172a', secondary: '#334155', accent: '#2563eb', 'accent-hover': '#1d4ed8' }, fontFamily: { sans: ['Inter', 'sans-serif'] } }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-2 group">
+                        <div
+                            class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center text-white text-xl shadow-lg group-hover:scale-105 transition-transform">
+                            <i class="fas fa-truck-fast"></i>
+                        </div>
+                        <span class="font-bold text-2xl tracking-tight text-primary dark:text-white">LogiFast</span>
+                    </a>
+                </div>
+                <div class="hidden xl:flex items-center space-x-8">
+                    <!-- Home Dropdown -->
+                    <div class="relative group">
+                        <a href="index.html"
+                            class="nav-link font-medium hover:text-accent transition-colors flex items-center gap-1">
+                            Home <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div class="absolute top-full left-0 mt-0 pt-4 hidden group-hover:block w-48 animate-fadeIn">
+                            <div
+                                class="bg-white dark:bg-gray-800 shadow-xl rounded-xl py-2 border border-gray-100 dark:border-gray-700 overflow-hidden">
+                                <a href="index.html"
+                                    class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-accent transition-colors">Home
+                                    V1</a>
+                                <a href="home2.html"
+                                    class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-accent transition-colors">Home
+                                    V2</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <a href="services.html"
+                            class="nav-link font-medium hover:text-accent transition-colors flex items-center gap-1">
+                            Services <i
+                                class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div class="absolute top-full left-0 mt-0 pt-4 hidden group-hover:block w-56 animate-fadeIn">
+                            <div
+                                class="bg-white dark:bg-gray-800 shadow-xl rounded-xl py-2 border border-gray-100 dark:border-gray-700 overflow-hidden">
+                                <a href="services.html"
+                                    class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-accent transition-colors">Air
+                                    Freight</a>
+                                <a href="services.html"
+                                    class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-accent transition-colors">Sea
+                                    Freight</a>
+                                <a href="services.html"
+                                    class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-accent transition-colors">Road
+                                    Transport</a>
+                                <a href="services.html"
+                                    class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-accent transition-colors">Warehousing</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="industries.html"
+                        class="nav-link font-medium hover:text-accent transition-colors">Industries</a>
+                    <a href="tracking.html"
+                        class="nav-link font-medium hover:text-accent transition-colors">Tracking</a>
+                    <a href="about.html" class="nav-link font-medium hover:text-accent transition-colors">About</a>
+                    <a href="contact.html" class="nav-link font-medium hover:text-accent transition-colors">Contact</a>
+                    <a href="admin_dashboard.html"
+                        class="nav-link font-medium hover:text-accent transition-colors text-red-500 hover:text-red-600">Admin</a>
+                </div>
+                <div class="hidden xl:flex items-center gap-4">
+                    <button
+                        class="theme-toggle w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    <a href="login.html"
+                        class="text-gray-600 dark:text-gray-300 font-medium hover:text-accent transition-colors">Login</a>
+                    <a href="contact.html"
+                        class="bg-accent hover:bg-accent-hover text-white px-6 py-2.5 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                        Get Quote
+                    </a>
+                </div>
+                <div class="xl:hidden flex items-center gap-4">
+                    <button
+                        class="theme-toggle w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    <button id="mobile-menu-btn"
+                        class="text-gray-700 dark:text-gray-200 hover:text-accent focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="fixed inset-y-0 left-0 w-64 bg-white dark:bg-gray-900 shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out xl:hidden z-[60] flex flex-col pt-20 px-6">
+        <a href="index.html"
+            class="py-3 text-lg font-medium border-b border-gray-100 dark:border-gray-800 hover:text-accent">Home
+            V1</a>
+        <a href="home2.html"
+            class="py-3 text-lg font-medium border-b border-gray-100 dark:border-gray-800 text-accent">Home V2</a>
+        <a href="services.html"
+            class="py-3 text-lg font-medium border-b border-gray-100 dark:border-gray-800 hover:text-accent">Services</a>
+        <a href="tracking.html"
+            class="py-3 text-lg font-medium border-b border-gray-100 dark:border-gray-800 hover:text-accent">Tracking</a>
+        <a href="contact.html"
+            class="py-3 text-lg font-medium border-b border-gray-100 dark:border-gray-800 hover:text-accent">Contact</a>
+        <a href="admin_dashboard.html"
+            class="py-3 text-lg font-medium border-b border-gray-100 dark:border-gray-800 text-red-500 hover:text-red-700">Admin
+            Panel</a>
+        <a href="contact.html"
+            class="mt-6 w-full bg-accent text-white text-center py-3 rounded-lg font-bold shadow-md">Get Quote</a>
+    </div>
+
+    <!-- Hero Section V2 (Split Screen) -->
+    <div class="min-h-screen pt-20 flex bg-white dark:bg-gray-900 relative">
+        <!-- Left Content -->
+        <div class="w-full lg:w-1/2 flex flex-col justify-center px-4 sm:px-12 lg:px-20 py-12 lg:py-0 relative z-10">
+            <span
+                class="inline-block py-1 px-3 rounded-full bg-accent/10 text-accent font-semibold text-sm mb-6 w-max">#1
+                Logistics Partner in 2026</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary dark:text-white leading-tight mb-6">
+                Redefining <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-400">Global
+                    Logistics</span>
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg">
+                Experience the next generation of supply chain management. Faster, smarter, and greener logistics
+                solutions tailored for your business.
+            </p>
+
+            <div
+                class="bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 max-w-md">
+                <h3 class="text-lg font-bold text-primary dark:text-white mb-4"><i
+                        class="fas fa-calculator text-accent mr-2"></i> Quick Rate Estimator</h3>
+                <form class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="text" placeholder="From (ZIP/City)"
+                            class="w-full bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-accent">
+                        <input type="text" placeholder="To (ZIP/City)"
+                            class="w-full bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-accent">
+                    </div>
+                    <select
+                        class="w-full bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-accent text-gray-500">
+                        <option>Select Service Type</option>
+                        <option>Air Freight</option>
+                        <option>Ocean Freight</option>
+                        <option>Road Transport</option>
+                    </select>
+                    <button type="button"
+                        class="w-full bg-accent hover:bg-accent-hover text-white py-3 rounded-lg font-bold transition-transform transform hover:-translate-y-1">
+                        Get Instant Quote
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right Visual -->
+        <div class="hidden lg:block lg:w-1/2 relative bg-gray-100 dark:bg-gray-800">
+            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
+                alt="Logistics Hub" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-l from-transparent to-white/20 dark:to-gray-900/40"></div>
+            <!-- Floating Stats Card -->
+            <div
+                class="absolute bottom-20 left-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur-md p-6 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700 max-w-xs animate-fadeIn">
+                <div class="flex items-center gap-4 mb-2">
+                    <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-primary dark:text-white">99.8%</div>
+                        <div class="text-xs text-gray-500 uppercase font-semibold">On-Time Delivery</div>
+                    </div>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-1.5 dark:bg-gray-700">
+                    <div class="bg-green-500 h-1.5 rounded-full" style="width: 99.8%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div class="p-6 border border-white/10 rounded-2xl hover:bg-white/5 transition-colors">
+                    <i class="fas fa-globe-americas text-4xl text-accent mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">Global Network</h3>
+                    <p class="text-gray-400">Operations in over 100 countries ensuring your goods reach any destination.
+                    </p>
+                </div>
+                <div class="p-6 border border-white/10 rounded-2xl hover:bg-white/5 transition-colors">
+                    <i class="fas fa-shield-alt text-4xl text-accent mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">Secure Cargo</h3>
+                    <p class="text-gray-400">Advanced security protocols and insurance coverage for peace of mind.</p>
+                </div>
+                <div class="p-6 border border-white/10 rounded-2xl hover:bg-white/5 transition-colors">
+                    <i class="fas fa-headset text-4xl text-accent mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">24/7 Support</h3>
+                    <p class="text-gray-400">Dedicated logistics experts available round the clock to assist you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary dark:text-white mb-2">Our Core Services</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-6">Comprehensive solutions for every
+                    shipping
+                    need.</p>
+                <a href="services.html" class="inline-flex items-center text-accent font-semibold hover:underline">View
+                    All <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service 1 -->
+                <div class="group relative overflow-hidden rounded-2xl h-64 cursor-pointer">
+                    <img src="https://i.pinimg.com/736x/43/ff/f5/43fff548ffb4960b665c3f3525452cfb.jpg" alt="Air Freight"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
+                        <i class="fas fa-plane text-white text-2xl mb-2"></i>
+                        <h3 class="text-white text-xl font-bold">Air Freight</h3>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="group relative overflow-hidden rounded-2xl h-64 cursor-pointer">
+                    <img src="https://i.pinimg.com/736x/08/7d/0a/087d0a747e25f70b391e20cf96062eb5.jpg"
+                        alt="Ocean Freight"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
+                        <i class="fas fa-ship text-white text-2xl mb-2"></i>
+                        <h3 class="text-white text-xl font-bold">Ocean Freight</h3>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="group relative overflow-hidden rounded-2xl h-64 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
+                        alt="Road Transport"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
+                        <i class="fas fa-truck text-white text-2xl mb-2"></i>
+                        <h3 class="text-white text-xl font-bold">Road Transport</h3>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="group relative overflow-hidden rounded-2xl h-64 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
+                        alt="Warehousing"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
+                        <i class="fas fa-warehouse text-white text-2xl mb-2"></i>
+                        <h3 class="text-white text-xl font-bold">Warehousing</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-gray-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center text-white text-xl">
+                            <i class="fas fa-truck-fast"></i>
+                        </div>
+                        <span class="font-bold text-2xl text-white">LogiFast</span>
+                    </a>
+                    <p class="text-gray-400 mb-6">Delivering excellence across every mile.</p>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="services.html" class="hover:text-accent transition-colors">All Services</a></li>
+                        <li><a href="tracking.html" class="hover:text-accent transition-colors">Track Shipment</a></li>
+                        <li><a href="about.html" class="hover:text-accent transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="text-accent transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="services.html" class="hover:text-accent transition-colors">Air Freight</a></li>
+                        <li><a href="services.html" class="hover:text-accent transition-colors">Ocean Freight</a></li>
+                        <li><a href="services.html" class="hover:text-accent transition-colors">Road Transport</a></li>
+                    </ul>
+                </div>
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Newsletter</h4>
+                    <form class="flex flex-col gap-3">
+                        <input type="email" placeholder="Your Email"
+                            class="bg-gray-800 border border-gray-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-accent">
+                        <button type="submit"
+                            class="bg-accent hover:bg-accent-hover text-white px-6 py-3 rounded-lg font-bold transition-colors">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div
+                class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+                <div>&copy; 2026 LogiFast Inc. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

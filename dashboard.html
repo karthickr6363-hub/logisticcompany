@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogiFast - Dashboard</title>
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚛</text></svg>">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f172a',
+                        secondary: '#334155',
+                        accent: '#2563eb',
+                        'accent-hover': '#1d4ed8',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <aside id="sidebar"
+            class="bg-primary text-white w-64 flex-shrink-0 hidden xl:flex flex-col transition-all duration-300">
+            <div class="h-16 flex items-center justify-center border-b border-gray-700">
+                <a href="index.html" class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-accent rounded-md flex items-center justify-center text-white text-lg">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight">LogiFast</span>
+                </a>
+            </div>
+
+            <nav class="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
+                <a href="dashboard.html"
+                    class="flex items-center px-4 py-3 bg-accent text-white rounded-lg shadow-md group">
+                    <i class="fas fa-th-large w-6"></i>
+                    <span class="font-medium">Dashboard</span>
+                </a>
+                <a href="#"
+                    class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition-colors group">
+                    <i class="fas fa-box-open w-6"></i>
+                    <span class="font-medium">My Shipments</span>
+                </a>
+                <a href="#"
+                    class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition-colors group">
+                    <i class="fas fa-history w-6"></i>
+                    <span class="font-medium">Order History</span>
+                </a>
+                <a href="#"
+                    class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition-colors group">
+                    <i class="fas fa-file-invoice-dollar w-6"></i>
+                    <span class="font-medium">Invoices</span>
+                </a>
+                <a href="#"
+                    class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition-colors group">
+                    <i class="fas fa-chart-line w-6"></i>
+                    <span class="font-medium">Reports</span>
+                </a>
+                <a href="#"
+                    class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition-colors group">
+                    <i class="fas fa-cog w-6"></i>
+                    <span class="font-medium">Settings</span>
+                </a>
+            </nav>
+
+            <div class="p-4 border-t border-gray-700">
+                <a href="index.html"
+                    class="flex items-center px-4 py-3 text-red-400 hover:bg-red-500/10 hover:text-red-300 rounded-lg transition-colors">
+                    <i class="fas fa-sign-out-alt w-6"></i>
+                    <span class="font-medium">Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden relative">
+            <!-- Header -->
+            <header class="bg-white dark:bg-gray-800 shadow-sm z-10 h-16 flex items-center justify-between px-6">
+                <div class="flex items-center">
+                    <button id="sidebar-toggle" class="text-gray-500 focus:outline-none xl:hidden mr-4">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    <h1 class="text-xl font-bold text-gray-800 dark:text-white">Dashboard Overview</h1>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <!-- Filter Icon (Mobile Optimization) -->
+                    <button class="xl:hidden text-gray-500 p-2">
+                        <i class="fas fa-filter"></i>
+                    </button>
+
+                    <button
+                        class="theme-toggle w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+
+                    <div class="flex items-center gap-3 ml-4">
+                        <img src="https://ui-avatars.com/api/?name=User+Admin&background=random" alt="User"
+                            class="w-10 h-10 rounded-full border-2 border-gray-200 dark:border-gray-600">
+                        <div class="hidden sm:block">
+                            <div class="text-sm font-bold text-gray-700 dark:text-gray-200">User Admin</div>
+                            <div class="text-xs text-gray-500">Premium Member</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Scroll Area -->
+            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 dark:bg-gray-900 p-6">
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Total Shipments</p>
+                                <p class="text-2xl font-bold text-gray-800 dark:text-white mt-1">1,245</p>
+                            </div>
+                            <div
+                                class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-accent text-xl">
+                                <i class="fas fa-box"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">In Transit</p>
+                                <p class="text-2xl font-bold text-gray-800 dark:text-white mt-1">34</p>
+                            </div>
+                            <div
+                                class="w-12 h-12 bg-yellow-100 dark:bg-yellow-900/30 rounded-full flex items-center justify-center text-yellow-600 text-xl">
+                                <i class="fas fa-truck-moving"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Delivered</p>
+                                <p class="text-2xl font-bold text-gray-800 dark:text-white mt-1">1,180</p>
+                            </div>
+                            <div
+                                class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-green-600 text-xl">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Pending</p>
+                                <p class="text-2xl font-bold text-gray-800 dark:text-white mt-1">31</p>
+                            </div>
+                            <div
+                                class="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center text-red-600 text-xl">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Shipments Table -->
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden">
+                    <div
+                        class="px-6 py-4 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center">
+                        <h3 class="font-bold text-lg text-gray-800 dark:text-white">Recent Shipments</h3>
+                        <button class="text-sm text-accent font-medium hover:underline">View All</button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr
+                                    class="bg-gray-50 dark:bg-gray-700/50 text-gray-500 dark:text-gray-400 text-xs uppercase tracking-wider">
+                                    <th class="px-6 py-3 font-medium">Tracking ID</th>
+                                    <th class="px-6 py-3 font-medium">Destination</th>
+                                    <th class="px-6 py-3 font-medium">Status</th>
+                                    <th class="px-6 py-3 font-medium">Date</th>
+                                    <th class="px-6 py-3 font-medium text-right">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-gray-800 dark:text-gray-200">#TRK-9821</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-400">New York, USA</td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-900/50 dark:text-yellow-300">In
+                                            Transit</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Oct 24, 2026</td>
+                                    <td class="px-6 py-4 text-right">
+                                        <button class="text-gray-400 hover:text-accent"><i
+                                                class="fas fa-ellipsis-v"></i></button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-gray-800 dark:text-gray-200">#TRK-9822</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-400">London, UK</td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300">Delivered</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Oct 23, 2026</td>
+                                    <td class="px-6 py-4 text-right">
+                                        <button class="text-gray-400 hover:text-accent"><i
+                                                class="fas fa-ellipsis-v"></i></button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-gray-800 dark:text-gray-200">#TRK-9823</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Tokyo, JP</td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="px-2 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-800 dark:bg-red-900/50 dark:text-red-300">Delayed</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Oct 22, 2026</td>
+                                    <td class="px-6 py-4 text-right">
+                                        <button class="text-gray-400 hover:text-accent"><i
+                                                class="fas fa-ellipsis-v"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Mobile Sidebar Overlay -->
+        <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-20 hidden xl:hidden"></div>
+
+        <!-- Mobile Sidebar -->
+        <div id="mobile-sidebar"
+            class="fixed inset-y-0 left-0 w-64 bg-primary text-white z-30 transform -translate-x-full transition-transform duration-300 xl:hidden flex flex-col">
+            <div class="h-16 flex items-center justify-between px-4 border-b border-gray-700">
+                <span class="font-bold text-xl">LogiFast</span>
+                <button id="close-sidebar" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="flex-1 px-4 py-6 space-y-2">
+                <a href="dashboard.html" class="flex items-center px-4 py-3 bg-accent text-white rounded-lg">
+                    <i class="fas fa-th-large w-6"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-800 rounded-lg">
+                    <i class="fas fa-box-open w-6"></i>
+                    <span>My Shipments</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-800 rounded-lg">
+                    <i class="fas fa-history w-6"></i>
+                    <span>Order History</span>
+                </a>
+                <!-- ... other links -->
+                <a href="index.html" class="flex items-center px-4 py-3 text-red-400 mt-auto">
+                    <i class="fas fa-sign-out-alt w-6"></i>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Dashboard specific JS
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const mobileSidebar = document.getElementById('mobile-sidebar');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+        const closeSidebar = document.getElementById('close-sidebar');
+
+        function toggleSidebar() {
+            mobileSidebar.classList.toggle('-translate-x-full');
+            sidebarOverlay.classList.toggle('hidden');
+        }
+
+        if (sidebarToggle) {
+            sidebarToggle.addEventListener('click', toggleSidebar);
+            closeSidebar.addEventListener('click', toggleSidebar);
+            sidebarOverlay.addEventListener('click', toggleSidebar);
+        }
+    </script>
+</body>
+
+</html>

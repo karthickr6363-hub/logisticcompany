@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogiFast - Global Logistics Solutions</title>
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚛</text></svg>">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f172a', /* Slate 900 */
+                        secondary: '#334155', /* Slate 700 */
+                        accent: '#2563eb', /* Blue 600 */
+                        'accent-hover': '#1d4ed8', /* Blue 700 */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-2 group">
+                        <div
+                            class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center text-white text-xl shadow-lg group-hover:scale-105 transition-transform">
+                            <i class="fas fa-truck-fast"></i>
+                        </div>
+                        <span class="font-bold text-2xl tracking-tight text-primary dark:text-white">LogiFast</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden xl:flex items-center space-x-8">
+                    <!-- Home Dropdown -->
+                    <div class="relative group">
+                        <a href="index.html"
+                            class="nav-link font-medium hover:text-accent transition-colors flex items-center gap-1">
+                            Home <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div class="absolute top-full left-0 mt-0 pt-4 hidden group-hover:block w-48 animate-fadeIn">
+                            <div
+                                class="bg-white dark:bg-gray-800 shadow-xl rounded-xl py-2 border border-gray-100 dark:border-gray-700 overflow-hidden">
+                                <a href="index.html"
+                                    class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-accent transition-colors">Home
+                                    V1</a>
+                                <a href="home2.html"
+                                    class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-accent transition-colors">Home
+                                    V2</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Services Dropdown -->
+                    <div class="relative group">
+                        <a href="services.html"
+                            class="nav-link font-medium hover:text-accent transition-colors flex items-center gap-1">
+                            Services <i
+                                class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div class="absolute top-full left-0 mt-0 pt-4 hidden group-hover:block w-56 animate-fadeIn">
+                            <div
+                                class="bg-white dark:bg-gray-800 shadow-xl rounded-xl py-2 border border-gray-100 dark:border-gray-700 overflow-hidden">
+                                <a href="services.html"
+                                    class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-accent transition-colors">Air
+                                    Freight</a>
+                                <a href="services.html"
+                                    class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-accent transition-colors">Sea
+                                    Freight</a>
+                                <a href="services.html"
+                                    class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-accent transition-colors">Road
+                                    Transport</a>
+                                <a href="services.html"
+                                    class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-accent transition-colors">Warehousing</a>
+                                <a href="services.html"
+                                    class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-accent transition-colors">Customs
+                                    Clearance</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="industries.html"
+                        class="nav-link font-medium hover:text-accent transition-colors">Industries</a>
+                    <a href="tracking.html"
+                        class="nav-link font-medium hover:text-accent transition-colors">Tracking</a>
+                    <a href="about.html" class="nav-link font-medium hover:text-accent transition-colors">About</a>
+                    <a href="contact.html" class="nav-link font-medium hover:text-accent transition-colors">Contact</a>
+                    <a href="admin_dashboard.html"
+                        class="nav-link font-medium hover:text-accent transition-colors text-red-500 hover:text-red-600">Admin</a>
+                </div>
+
+                <!-- Right Actions -->
+                <div class="hidden xl:flex items-center gap-4">
+                    <button
+                        class="theme-toggle w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    <a href="contact.html"
+                        class="bg-accent hover:bg-accent-hover text-white px-6 py-2.5 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                        Get Quote
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="xl:hidden flex items-center gap-4">
+                    <button
+                        class="theme-toggle w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    <button id="mobile-menu-btn"
+                        class="text-gray-700 dark:text-gray-200 hover:text-accent focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- Mobile Menu (Left Slide-in) -->
+    <div id="mobile-menu"
+        class="fixed inset-y-0 left-0 w-64 bg-white dark:bg-gray-900 shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out xl:hidden z-[60] flex flex-col pt-20 px-6">
+        <a href="index.html"
+            class="py-3 text-lg font-medium border-b border-gray-100 dark:border-gray-800 hover:text-accent">Home
+            V1</a>
+        <a href="home2.html"
+            class="py-3 text-lg font-medium border-b border-gray-100 dark:border-gray-800 hover:text-accent">Home
+            V2</a>
+        <a href="services.html"
+            class="py-3 text-lg font-medium border-b border-gray-100 dark:border-gray-800 hover:text-accent">Services</a>
+        <a href="tracking.html"
+            class="py-3 text-lg font-medium border-b border-gray-100 dark:border-gray-800 hover:text-accent">Tracking</a>
+        <a href="about.html"
+            class="py-3 text-lg font-medium border-b border-gray-100 dark:border-gray-800 hover:text-accent">About</a>
+        <a href="contact.html"
+            class="py-3 text-lg font-medium border-b border-gray-100 dark:border-gray-800 hover:text-accent">Contact</a>
+        <a href="admin_dashboard.html"
+            class="py-3 text-lg font-medium border-b border-gray-100 dark:border-gray-800 text-red-500 hover:text-red-700">Admin
+            Panel</a>
+        <a href="contact.html"
+            class="mt-6 w-full bg-accent text-white text-center py-3 rounded-lg font-bold shadow-md">Get Quote</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                alt="Logistics Warehouse" class="w-full h-full object-cover">
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/40 dark:from-black/90 dark:to-black/50">
+            </div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
+            <div class="max-w-3xl mx-auto animate-fadeIn">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+                    Delivering <span class="text-accent">Excellence</span> Across Every Mile.
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
+                    Reliable logistics & supply chain solutions worldwide. We ensure your cargo reaches its destination
+                    safely and on time, every time.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+                    <a href="contact.html"
+                        class="bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 text-center">
+                        Request a Quote
+                    </a>
+                    <a href="tracking.html"
+                        class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 text-center">
+                        Track Shipment
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white/50 text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Services Highlights -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary dark:text-white mb-4">Our Services</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Comprehensive logistics solutions
+                    tailored to your business needs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div
+                    class="group bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 flex flex-col h-full hover:-translate-y-1 text-center">
+                    <div
+                        class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-accent text-2xl mb-6 group-hover:bg-accent group-hover:text-white transition-colors mx-auto">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary dark:text-white mb-3">Air Freight</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 flex-grow">Fast and secure air cargo services for
+                        urgent global deliveries.</p>
+                    <a href="services.html"
+                        class="inline-flex items-center justify-center text-accent font-semibold group-hover:translate-x-1 transition-transform mx-auto">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div
+                    class="group bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 flex flex-col h-full hover:-translate-y-1 text-center">
+                    <div
+                        class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-accent text-2xl mb-6 group-hover:bg-accent group-hover:text-white transition-colors mx-auto">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary dark:text-white mb-3">Sea Freight</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 flex-grow">Cost-effective ocean shipping for large
+                        volume international cargo.</p>
+                    <a href="services.html"
+                        class="inline-flex items-center justify-center text-accent font-semibold group-hover:translate-x-1 transition-transform mx-auto">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div
+                    class="group bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 flex flex-col h-full hover:-translate-y-1 text-center">
+                    <div
+                        class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-accent text-2xl mb-6 group-hover:bg-accent group-hover:text-white transition-colors mx-auto">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary dark:text-white mb-3">Road Transport</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 flex-grow">Reliable trucking fleet for domestic and
+                        cross-border distribution.</p>
+                    <a href="services.html"
+                        class="inline-flex items-center text-accent font-semibold group-hover:translate-x-1 transition-transform mx-auto">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div
+                    class="group bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 flex flex-col h-full hover:-translate-y-1 text-center">
+                    <div
+                        class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-accent text-2xl mb-6 group-hover:bg-accent group-hover:text-white transition-colors mx-auto">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary dark:text-white mb-3">Warehousing</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 flex-grow">Secure storage solutions with inventory
+                        management systems.</p>
+                    <a href="services.html"
+                        class="inline-flex items-center justify-center text-accent font-semibold group-hover:translate-x-1 transition-transform mx-auto">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div
+                    class="group bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 flex flex-col h-full hover:-translate-y-1 text-center">
+                    <div
+                        class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-accent text-2xl mb-6 group-hover:bg-accent group-hover:text-white transition-colors mx-auto">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary dark:text-white mb-3">Customs Clearance</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 flex-grow">Expert handling of documentation and
+                        regulatory compliance.</p>
+                    <a href="services.html"
+                        class="inline-flex items-center justify-center text-accent font-semibold group-hover:translate-x-1 transition-transform mx-auto">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div
+                    class="group bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 flex flex-col h-full hover:-translate-y-1 text-center">
+                    <div
+                        class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-accent text-2xl mb-6 group-hover:bg-accent group-hover:text-white transition-colors mx-auto">
+                        <i class="fas fa-boxes-stacked"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary dark:text-white mb-3">Supply Chain</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 flex-grow">End-to-end optimization of your logistics
+                        workflow.</p>
+                    <a href="services.html"
+                        class="inline-flex items-center justify-center text-accent font-semibold group-hover:translate-x-1 transition-transform mx-auto">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-accent text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl md:text-5xl font-extrabold mb-2">10k+</div>
+                    <div class="text-blue-100 text-sm md:text-base">Shipments Delivered</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-extrabold mb-2">15+</div>
+                    <div class="text-blue-100 text-sm md:text-base">Years Experience</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-extrabold mb-2">50+</div>
+                    <div class="text-blue-100 text-sm md:text-base">Countries Served</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-extrabold mb-2">24/7</div>
+                    <div class="text-blue-100 text-sm md:text-base">Support Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 relative">
+                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
+                        alt="Logistics Team" class="rounded-2xl shadow-2xl">
+                    <div
+                        class="absolute -bottom-6 -right-6 w-32 h-32 bg-accent rounded-xl hidden md:flex items-center justify-center text-white p-4 text-center text-sm font-bold shadow-lg">
+                        Award Winning Service
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary dark:text-white mb-6">Why Partner With Us?
+                    </h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">In today's fast-paced global market, you
+                        need a logistics partner who understands your business. We combine cutting-edge technology with
+                        deep industry expertise to deliver efficient, scalable, and sustainable supply chain solutions
+                        that drive your business forward. From real-time visibility to dedicated support, we go the
+                        extra mile.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 bg-white dark:bg-gray-700 rounded-full flex items-center justify-center text-accent shadow-sm">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold text-primary dark:text-white">On-Time Delivery</h4>
+                                <p class="text-gray-600 dark:text-gray-400 mt-1">We maintain a 99.8% on-time performance
+                                    record across all routes through optimized planning and proactive monitoring.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 bg-white dark:bg-gray-700 rounded-full flex items-center justify-center text-accent shadow-sm">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold text-primary dark:text-white">Real-Time Tracking</h4>
+                                <p class="text-gray-600 dark:text-gray-400 mt-1">Experience full visibility of your
+                                    shipments 24/7/365 with our advanced tracking platform and automated updates.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 bg-white dark:bg-gray-700 rounded-full flex items-center justify-center text-accent shadow-sm">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold text-primary dark:text-white">Secure Handling</h4>
+                                <p class="text-gray-600 dark:text-gray-400 mt-1">Your cargo's safety is our priority. We
+                                    utilize advanced security protocols and certified handling procedures for high-value
+                                    goods.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary dark:text-white mb-4">How It Works</h2>
+            <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-16">Simplifying your logistics from
+                pickup to delivery in four easy steps.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <!-- Connector Line (Desktop) -->
+                <div
+                    class="hidden md:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-gray-200 dark:bg-gray-700 z-0">
+                </div>
+
+                <!-- Step 1 -->
+                <div class="relative z-10 group">
+                    <div
+                        class="w-24 h-24 bg-white dark:bg-gray-800 border-4 border-accent rounded-full flex items-center justify-center text-3xl text-accent mx-auto mb-6 shadow-lg group-hover:bg-accent group-hover:text-white transition-colors">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary dark:text-white mb-2">1. Request a Quote</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Fill out our simple form or call us to get a
+                        competitive, tailored quote for your shipment.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative z-10 group">
+                    <div
+                        class="w-24 h-24 bg-white dark:bg-gray-800 border-4 border-accent rounded-full flex items-center justify-center text-3xl text-accent mx-auto mb-6 shadow-lg group-hover:bg-accent group-hover:text-white transition-colors">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary dark:text-white mb-2">2. Package Processing</h3>
+                    <p class="text-gray-600 dark:text-gray-400">We pick up your cargo and process it at our facility
+                        with secure labeling and documentation.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10 group">
+                    <div
+                        class="w-24 h-24 bg-white dark:bg-gray-800 border-4 border-accent rounded-full flex items-center justify-center text-3xl text-accent mx-auto mb-6 shadow-lg group-hover:bg-accent group-hover:text-white transition-colors">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary dark:text-white mb-2">3. Transport & Monitor</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Your shipment is dispatched via the optimal route. Track
+                        its journey in real-time on our platform.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative z-10 group">
+                    <div
+                        class="w-24 h-24 bg-white dark:bg-gray-800 border-4 border-accent rounded-full flex items-center justify-center text-3xl text-accent mx-auto mb-6 shadow-lg group-hover:bg-accent group-hover:text-white transition-colors">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary dark:text-white mb-2">4. Safe Delivery</h3>
+                    <p class="text-gray-600 dark:text-gray-400">We deliver your cargo safely to the destination and
+                        provide instant delivery confirmation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-accent text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl md:text-5xl font-extrabold mb-2">10k+</div>
+                    <div class="text-blue-100 text-sm md:text-base">Shipments Delivered</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-extrabold mb-2">15+</div>
+                    <div class="text-blue-100 text-sm md:text-base">Years Experience</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-extrabold mb-2">50+</div>
+                    <div class="text-blue-100 text-sm md:text-base">Countries Served</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-extrabold mb-2">24/7</div>
+                    <div class="text-blue-100 text-sm md:text-base">Support Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary dark:text-white mb-16">Client Testimonials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div
+                    class="bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 relative shadow-sm">
+                    <div class="text-accent text-4xl absolute -top-4 left-8 bg-white dark:bg-gray-900 px-2">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 italic mb-6 pt-4">"LogiFast has transformed our supply
+                        chain. Their reliability and transparency are unmatched in the industry."</p>
+                    <div class="flex items-center justify-center">
+                        <img src="https://ui-avatars.com/api/?name=Sarah+Smith&background=random" alt="Client"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div class="text-left">
+                            <div class="font-bold text-primary dark:text-white">Sarah Smith</div>
+                            <div class="text-sm text-gray-500">Ops Manager, RetailCo</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div
+                    class="bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 relative shadow-sm">
+                    <div class="text-accent text-4xl absolute -top-4 left-8 bg-white dark:bg-gray-900 px-2">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 italic mb-6 pt-4">"Excellent service for our
+                        international shipments. The tracking visibility is a game-changer for us."</p>
+                    <div class="flex items-center justify-center">
+                        <img src="https://ui-avatars.com/api/?name=James+Doe&background=random" alt="Client"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div class="text-left">
+                            <div class="font-bold text-primary dark:text-white">James Doe</div>
+                            <div class="text-sm text-gray-500">Director, ImportCorp</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div
+                    class="bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 relative shadow-sm">
+                    <div class="text-accent text-4xl absolute -top-4 left-8 bg-white dark:bg-gray-900 px-2">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 italic mb-6 pt-4">"Professional team and competitive
+                        rates. Highly recommended for any business needing logistics."</p>
+                    <div class="flex items-center justify-center">
+                        <img src="https://ui-avatars.com/api/?name=Mike+Ross&background=random" alt="Client"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div class="text-left">
+                            <div class="font-bold text-primary dark:text-white">Mike Ross</div>
+                            <div class="text-sm text-gray-500">CEO, AutoP</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12">
+                <a href="about.html"
+                    class="inline-block border-2 border-accent text-accent hover:bg-accent hover:text-white px-8 py-3 rounded-lg font-bold transition-colors">
+                    Read More Reviews
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News Preview -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary dark:text-white mb-4">Latest Insights</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-6">Stay updated with the latest
+                    trends
+                    and company news.</p>
+                <a href="blog.html" class="inline-flex items-center text-accent font-semibold hover:underline">View All
+                    News
+                    <i class="fas fa-arrow-right ml-2"></i></a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Blog Card 1 -->
+                <article class="group text-center">
+                    <div class="overflow-hidden rounded-2xl mb-4 h-64">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
+                            alt="The Future of AI in Supply Chain"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="text-sm text-accent font-semibold mb-2">Industry Trends</div>
+                    <h3
+                        class="text-xl font-bold text-primary dark:text-white mb-2 group-hover:text-accent transition-colors">
+                        <a href="blog.html">The Future of AI in Supply Chain</a>
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">Exploring how artificial intelligence
+                        is revolutionizing logistics optimization and predictive maintenance.</p>
+                    <a href="blog.html" class="text-accent font-medium hover:underline">Read More</a>
+                </article>
+
+                <!-- Blog Card 2 -->
+                <article class="group text-center">
+                    <div class="overflow-hidden rounded-2xl mb-4 h-64">
+                        <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1741&q=80"
+                            alt="News 2"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="text-sm text-accent font-semibold mb-2">Company News</div>
+                    <h3
+                        class="text-xl font-bold text-primary dark:text-white mb-2 group-hover:text-accent transition-colors">
+                        <a href="blog.html">LogiFast Expands European Network</a>
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">We are proud to announce the opening
+                        of three new distribution centers in Germany and France.</p>
+                    <a href="blog.html" class="text-accent font-medium hover:underline">Read More</a>
+                </article>
+
+                <!-- Blog Card 3 -->
+                <article class="group text-center">
+                    <div class="overflow-hidden rounded-2xl mb-4 h-64">
+                        <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1780&q=80"
+                            alt="News 3"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="text-sm text-accent font-semibold mb-2">Sustainability</div>
+                    <h3
+                        class="text-xl font-bold text-primary dark:text-white mb-2 group-hover:text-accent transition-colors">
+                        <a href="blog.html">Green Logistics: Our Path to Net Zero</a>
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">Detailed look at our new electric
+                        fleet and sustainable packaging initiatives for 2026.</p>
+                    <a href="blog.html" class="text-accent font-medium hover:underline">Read More</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section Placeholder -->
+    <section class="py-20 bg-gray-100 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary dark:text-white mb-8">Global Coverage</h2>
+            <div
+                class="relative bg-gray-300 dark:bg-gray-700 h-[400px] rounded-2xl flex items-center justify-center overflow-hidden">
+                <img src="https://img.freepik.com/free-vector/world-map-with-global-technology-social-connection-network-background_1017-23321.jpg?w=1380&t=st=1708050000~exp=1708050600~hmac=e2c2c2"
+                    alt="Global Map" class="w-full h-full object-cover opacity-60 mix-blend-multiply">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <span
+                        class="bg-white/90 dark:bg-black/80 px-6 py-3 rounded-lg shadow-lg font-bold text-xl drop-shadow-md">
+                        Interactive Global Map
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-gray-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center text-white text-xl">
+                            <i class="fas fa-truck-fast"></i>
+                        </div>
+                        <span class="font-bold text-2xl text-white">LogiFast</span>
+                    </a>
+                    <p class="text-gray-400 mb-6">Delivering excellence across every mile with sustainable and efficient
+                        logistics solutions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-accent hover:text-white transition-all transform hover:-translate-y-1">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-accent hover:text-white transition-all transform hover:-translate-y-1">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-accent hover:text-white transition-all transform hover:-translate-y-1">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-accent hover:text-white transition-all transform hover:-translate-y-1">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="services.html" class="hover:text-accent transition-colors">All Services</a></li>
+                        <li><a href="tracking.html" class="hover:text-accent transition-colors">Track Shipment</a></li>
+                        <li><a href="about.html" class="hover:text-accent transition-colors">About Us</a></li>
+                        <li><a href="careers.html" class="hover:text-accent transition-colors">Careers</a></li>
+                        <li><a href="blog.html" class="hover:text-accent transition-colors">News & Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="services.html" class="hover:text-accent transition-colors">Air Freight</a></li>
+                        <li><a href="services.html" class="hover:text-accent transition-colors">Ocean Freight</a></li>
+                        <li><a href="services.html" class="hover:text-accent transition-colors">Road Transport</a></li>
+                        <li><a href="services.html" class="hover:text-accent transition-colors">Warehousing</a></li>
+                        <li><a href="services.html" class="hover:text-accent transition-colors">Supply Chain</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe for the latest industry updates.</p>
+                    <form class="flex flex-col gap-3">
+                        <input type="email" placeholder="Your Email"
+                            class="bg-gray-800 border border-gray-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-accent">
+                        <button type="submit"
+                            class="bg-accent hover:bg-accent-hover text-white px-6 py-3 rounded-lg font-bold transition-colors">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+                <div class="mb-4 md:mb-0">&copy; 2026 LogiFast Inc. All rights reserved.</div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
